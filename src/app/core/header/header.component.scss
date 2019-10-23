@@ -1,0 +1,36 @@
+//----------------------------------------
+//  Header
+//----------------------------------------
+
+@import '../../../css/abstracts/colors';
+
+$navbar-height: 64px;
+
+//----------------------------------------
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $navbar-height;
+  padding: 0 16px;
+  background-color: $color-5;
+  color: #FFFFFF;
+
+  h1 {
+    margin: 0;
+    font-family: Bangers, sans-serif;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: $navbar-height - 8px;
+      margin-right: 12px;
+    }
+
+  }
+
+}
