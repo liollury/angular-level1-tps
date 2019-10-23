@@ -4,7 +4,7 @@ import { ModuleWithProviders } from '@angular/core';
 const appRoutes: Routes = [
   {
     path: '**',
-    redirectTo: '/'
+    redirectTo: '/comics'
   }
 ];
 
