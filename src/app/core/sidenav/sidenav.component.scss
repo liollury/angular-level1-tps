@@ -17,7 +17,7 @@
   .categories {
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
+    margin-left: 24px;
 
     a {
       position: relative;
@@ -40,11 +40,11 @@
 
       &:before {
         content: '';
-        display : inline-block;
+        display: inline-block;
         position: absolute;
-        left: -30px;
-        border-bottom : 52px solid transparent;
-        border-left : 30px solid transparent;
+        left: -15px;
+        border-bottom: 52px solid transparent;
+        border-left: 15px solid transparent;
         transition: .25s;
       }
 
