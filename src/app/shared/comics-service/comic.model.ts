@@ -1,7 +1,5 @@
 export class ComicImageModel {
-  iconUrl: string;
-  mediumUrl: string;
-  thumbUrl: string;
+  originalUrl: string;
 }
 
 export class ComicModel {
@@ -9,8 +7,7 @@ export class ComicModel {
   public name: string;
   public aliases: Array<string>;
   public apiDetailUrl: string;
-  public dateAdded: Date;
-  public dateLastUpdate: Date;
+  public startYear: number;
   public description: string;
   public image: ComicImageModel;
 }
