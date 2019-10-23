@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ListRoute } from './list.routing';
 import { ListComponent } from './list.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ListRoute
+    ListRoute,
+    SharedModule
   ],
   declarations: [ ListComponent ]
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComicsService } from '../shared/comics-service/comics.service';
 
 @Component({
   selector: 'comics-list',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private comicsService: ComicsService) { }
 
   ngOnInit() {
+
   }
 
 }
