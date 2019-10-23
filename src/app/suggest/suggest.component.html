@@ -1,1 +1,24 @@
-<p>suggest works!</p>
+<form>
+  <div class="block">
+    <div class="field">
+      <label>Nom</label>
+      <input type="text" />
+    </div>
+
+    <div class="field">
+      <label>Date de sortie</label>
+      <input type="date" />
+    </div>
+  </div>
+
+  <div class="field">
+    <label>description</label>
+    <textarea></textarea>
+  </div>
+
+
+  <button class="btn" [routerLink]="[ '/comic', 'suggest' ]">
+    Proposer un comic
+  </button>
+
+</form>
