@@ -1,3 +1,15 @@
 <button class="btn" [routerLink]="[ '/comic', 'suggest' ]">
   Proposer un comic
 </button>
+
+<div class="categories">
+  <a [routerLink]="[ '/comics', 1 ]" routerLinkActive="selected">Astérix</a>
+  <a [routerLink]="[ '/comics', 2 ]" routerLinkActive="selected">Lucky Luke</a>
+  <a [routerLink]="[ '/comics', 3 ]" routerLinkActive="selected">Largo Winch</a>
+  <a [routerLink]="[ '/comics', 4 ]" routerLinkActive="selected">XIII</a>
+  <a [routerLink]="[ '/comics', 5 ]" routerLinkActive="selected">Tintin</a>
+  <a [routerLink]="[ '/comics', 6 ]" routerLinkActive="selected">Thorgal</a>
+  <a [routerLink]="[ '/comics', 7 ]" routerLinkActive="selected">Spirou</a>
+  <a [routerLink]="[ '/comics', 8 ]" routerLinkActive="selected">Gaston Lagaffe</a>
+  <a [routerLink]="[ '/comics', 9 ]" routerLinkActive="selected">Blueberry</a>
+</div>
