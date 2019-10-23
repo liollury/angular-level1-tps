@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sii-header',
+  selector: 'comics-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

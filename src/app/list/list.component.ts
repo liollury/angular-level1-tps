@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sii-list',
+  selector: 'comics-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })

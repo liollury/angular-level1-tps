@@ -12,13 +12,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "sii",
+      "comics",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "sii",
+      "comics",
       "kebab-case"
     ],
     "import-blacklist": [

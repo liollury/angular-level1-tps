@@ -13,7 +13,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "sii",
+      "prefix": "comics",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
