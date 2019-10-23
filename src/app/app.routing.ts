@@ -8,5 +8,4 @@ const appRoutes: Routes = [
   }
 ];
 
-
 export const AppRoute: ModuleWithProviders = RouterModule.forRoot(appRoutes);

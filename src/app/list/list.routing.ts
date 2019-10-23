@@ -10,5 +10,4 @@ const listRoutes: Routes = [
   }
 ];
 
-
-export const ListRoute: ModuleWithProviders = RouterModule.forRoot(listRoutes);
+export const ListRoute: ModuleWithProviders = RouterModule.forChild(listRoutes);
