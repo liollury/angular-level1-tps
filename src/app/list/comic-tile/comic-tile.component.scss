@@ -2,10 +2,10 @@ $screen-recommanded-size: 1400px;
 
 :host {
   @media screen and (min-width: $screen-recommanded-size) {
-    width: calc(25% - 2vmin);
+    width: calc(20% - 2vmin);
   }
   @media screen and (max-width: $screen-recommanded-size) {
-    width: calc(33% - 2vmin);
+    width: calc(25% - 2vmin);
   }
   display: flex;
   justify-content: center;
