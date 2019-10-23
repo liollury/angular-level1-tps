@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ListRoute } from './list.routing';
 import { ListComponent } from './list.component';
 import { SharedModule } from '../shared/shared.module';
+import { ComicTileComponent } from './comic-tile/comic-tile.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,6 @@ import { SharedModule } from '../shared/shared.module';
     ListRoute,
     SharedModule
   ],
-  declarations: [ ListComponent ]
+  declarations: [ ListComponent, ComicTileComponent ]
 })
 export class ListModule { }
