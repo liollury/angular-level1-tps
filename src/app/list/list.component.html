@@ -1,3 +1,10 @@
-<div class="list-container" *ngIf="comics$ | async as comics">
-  <comics-comic-tile *ngFor="let comic of comics" [comic]="comic" (delete)="deleteComic($event)"></comics-comic-tile>
-</div>
+<ng-container *ngIf="comics$ | async as comics">
+  <div class="list-container" *ngIf="comics.length > 0; else noData">
+    <comics-comic-tile *ngFor="let comic of comics" [comic]="comic" (delete)="deleteComic($event)"></comics-comic-tile>
+  </div>
+  <ng-template #noData>
+    <div class="error">
+      Damned, pas de comics en vue !
+    </div>
+  </ng-template>
+</ng-container>

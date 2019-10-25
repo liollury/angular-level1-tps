@@ -7,6 +7,7 @@ let comics = require('./comics.json');
 let categories;
 
 const subjects = [
+    'mes comics',
     'largo winch',
     'asterix',
     'xiii',
@@ -31,6 +32,7 @@ const charactersComicVineId = [
 ];
 
 const volumesComicVineId = [
+    '4050-12345', // mes comics
     '4050-31638', // largo winch
     '4050-74147', // asterix
     '4050-26986', // xiii
@@ -45,7 +47,7 @@ const volumesComicVineId = [
 const prependUrlApi =
     'api_key=3ab3db0ca0e16aa122abe7d8e0c679778bd30c65&format=json';
 
-let i = 0;
+let i = 1;
 
 const loop = () => {
     console.log('loop: ', i, volumesComicVineId.length);

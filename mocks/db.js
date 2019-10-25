@@ -1,7 +1,8 @@
 module.exports = function () {
   return {
     categories:
-      [{"name": "largo winch", "id": 31638}, {"name": "asterix", "id": 74147}, {
+      [{"name": "mes comics", "id": 12345},
+        {"name": "largo winch", "id": 31638}, {"name": "asterix", "id": 74147}, {
         "name": "xiii",
         "id"  : 26986
       }, {"name": "gaston", "id": 116455}, {"name": "tintin", "id": 32164}, {
