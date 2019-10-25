@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl } from '@angular/forms';
 import { merge, Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 import { ComicModel } from '../shared/comics/comic.model';
 import { ComicsService } from '../shared/comics/comics.service';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'comics-list',
@@ -32,8 +32,10 @@ export class ListComponent implements OnInit {
     );
   }
 
-  deleteComic (comic: ComicModel) {
-    this.comicsService.delete(comic).subscribe(() => this.deleteChanges.next());
+  onDeleteComic (comic: ComicModel) {
+    this.comicsService.delete(comic).subscribe(() => {
+      this.deleteChanges.next();
+    });
   }
 
   private get volumeId (): number {

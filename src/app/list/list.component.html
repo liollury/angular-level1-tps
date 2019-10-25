@@ -8,12 +8,11 @@
       *ngFor="let comic of comics"
       [comic]="comic"
       [routerLink]="[ '/detail', comic.id ]"
-      (delete)="deleteComic($event)"
+      (delete)="onDeleteComic($event)"
     ></comics-comic-tile>
   </div>
+
   <ng-template #noData>
-    <div class="error">
-      Damned, pas de comics en vue !
-    </div>
+    <p class="error">Damned, pas de comics en vue !</p>
   </ng-template>
 </ng-container>

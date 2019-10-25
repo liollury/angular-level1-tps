@@ -17,8 +17,7 @@ export class ComicsService {
 
   constructor (
     private http: HttpClient
-  ) {
-  }
+  ) { }
 
   listMocked (): Observable<Array<ComicModel>> {
     return of(comicsMock);

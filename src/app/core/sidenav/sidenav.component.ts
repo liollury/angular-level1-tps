@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CategoryModel } from '../category-service/category.model';
-import { CategoryService } from '../category-service/category.service';
+
+import { CategoryModel } from '../category/category.model';
+import { CategoryService } from '../category/category.service';
 
 @Component({
   selector: 'comics-sidenav',
@@ -11,9 +12,11 @@ import { CategoryService } from '../category-service/category.service';
 export class SidenavComponent implements OnInit {
   public categories$: Observable<Array<CategoryModel>>;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor (
+    private categoryService: CategoryService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit () {
     this.categories$ = this.categoryService.list();
   }
 

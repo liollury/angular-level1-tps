@@ -15,7 +15,7 @@ export class ComicTileComponent {
   @Output()
   delete: EventEmitter<ComicModel> = new EventEmitter<ComicModel>();
 
-  deleteComic (event: MouseEvent) {
+  onDelete (event: MouseEvent) {
     event.stopPropagation();
 
     this.delete.emit(this.comic);

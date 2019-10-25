@@ -3,5 +3,11 @@
 </button>
 
 <div class="categories">
-  <a [routerLink]="[ '/comics', category.id ]" routerLinkActive="selected" *ngFor="let category of categories$ | async">{{category.name | titlecase}}</a>
+  <a
+    *ngFor="let category of categories$ | async"
+    [routerLink]="[ '/comics', category.id ]"
+    routerLinkActive="selected"
+  >
+    {{ category.name | titlecase }}
+  </a>
 </div>

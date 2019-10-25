@@ -2,14 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Angular Level1 TPs</title>
+    <title>Commics Database</title>
     <base href="/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <style>
+      .loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #EFEFEF;
+      }
+    </style>
   </head>
 
   <body>
-    <comics-root></comics-root>
+    <comics-root>
+      <div class="loader">
+        <img src="assets/loader.gif" />
+      </div>
+    </comics-root>
   </body>
 </html>
