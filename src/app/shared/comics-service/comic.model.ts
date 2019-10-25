@@ -1,5 +1,5 @@
 export class ComicModel {
-  public coverDate: string;
+  public date: string;
   public id: number;
   public name: string;
   public volumeId: number;

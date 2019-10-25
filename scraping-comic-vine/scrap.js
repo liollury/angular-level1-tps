@@ -4,6 +4,8 @@ const imageDownload = require('image-downloader');
 
 let comics = require('./comics.json');
 
+let categories;
+
 const subjects = [
     'largo winch',
     'asterix',
@@ -69,11 +71,11 @@ const loop = () => {
                                         .results;
 
                                     let TPIssue = {
-                                        cover_date: originalIssue.cover_date,
+                                        date: originalIssue.cover_date,
                                         id: originalIssue.id,
                                         name: originalIssue.name,
-                                        volume_id: originalIssue.volume.id,
-                                        image_url: originalIssue.image.medium_url.replace(
+                                        volumeId: originalIssue.volume.id,
+                                        imageUrl: originalIssue.image.medium_url.replace(
                                             'https://comicvine.gamespot.com/api/image/scale_medium/',
                                             ''
                                         )
@@ -130,7 +132,9 @@ const loop = () => {
         writeData();
     }
 };
-loop();
+
+categories = volumesComicVineId.map((volume) => parseInt(volume.replace('4050-', '')))
+  .map((id, index) => ({name: subjects[index], id}));
 
 writeData = () => {
     fs.writeJson('./comics.json', comics)
@@ -140,4 +144,12 @@ writeData = () => {
         .catch(err => {
             console.error(err);
         });
+
+  fs.writeJson('./categories.json', categories)
+    .then(() => {
+      console.log('success!');
+    })
+    .catch(err => {
+      console.error(err);
+    });
 };
