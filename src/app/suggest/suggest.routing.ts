@@ -5,9 +5,13 @@ import { SuggestComponent } from './suggest.component';
 
 const suggestRoutes: Routes = [
   {
-    path: 'comic/suggest',
+    path: '',
     component: SuggestComponent
-  }
+  },
+  /*{
+    path: 'suggest',
+    component: SuggestComponent
+  }*/
 ];
 
 

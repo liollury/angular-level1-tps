@@ -5,13 +5,21 @@ import { ListComponent } from './list.component';
 
 const listRoutes: Routes = [
   {
+    path: '',
+    component: ListComponent
+  },
+  {
+    path: ':category',
+    component: ListComponent
+  },
+  /*{
     path: 'comics',
     component: ListComponent
   },
   {
     path: 'comics/:category',
     component: ListComponent
-  },
+  },*/
 ];
 
 export const ListRoute: ModuleWithProviders = RouterModule.forChild(listRoutes);

@@ -4,9 +4,13 @@ import { DetailComponent } from './detail.component';
 
 const detailRoutes: Routes = [
   {
-    path: 'detail/:id',
+    path: ':id',
     component: DetailComponent
   },
+  /*{
+    path: 'detail/:id',
+    component: DetailComponent
+  },*/
 ];
 
 export const detailRoute: ModuleWithProviders = RouterModule.forChild(detailRoutes);
