@@ -11,23 +11,24 @@ import { environment } from '../../../environments/environment';
   providedIn: SharedServiceModule
 })
 export class ComicsService {
-  public static MY_COMICS_ID = 13245;
+  public static MY_COMICS_ID = 12345;
   private static RESOURCE = 'comics';
   private comicsMock: Array<ComicModel> = comicsMock;
 
-  constructor (
+  constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
 
-  listMocked (): Observable<Array<ComicModel>> {
+  listMocked(): Observable<Array<ComicModel>> {
     return of(comicsMock);
   }
 
-  list (volumeId?: number): Observable<Array<ComicModel>> {
-    const params: HttpParams = new HttpParams();
+  list(volumeId?: number): Observable<Array<ComicModel>> {
+    let params: HttpParams = new HttpParams();
 
     if (volumeId) {
-      params.set('volumeId', volumeId.toString());
+      params = params.set('volumeId', volumeId.toString());
     }
 
     return this.http.get<Array<ComicModel>>(`${environment.apiUrl}/${ComicsService.RESOURCE}`, {
@@ -35,22 +36,22 @@ export class ComicsService {
     });
   }
 
-  deleteMock (comicToDelete: ComicModel): void {
+  deleteMock(comicToDelete: ComicModel): void {
     this.comicsMock = this.comicsMock.filter((comic: ComicModel) => comic !== comicToDelete);
   }
 
-  delete (comic: ComicModel): Observable<void> {
+  delete(comic: ComicModel): Observable<void> {
     return this.http.delete<void>(`${environment.apiUrl}/comics/${comic.id}`);
   }
 
-  create (comic: ComicModel): Observable<void> {
+  create(comic: ComicModel): Observable<void> {
     return this.http.post<void>(`${environment.apiUrl}/${ComicsService.RESOURCE}`, {
       volumeId: ComicsService.MY_COMICS_ID,
       ...comic
     });
   }
 
-  createMock (comic: ComicModel): void {
+  createMock(comic: ComicModel): void {
     this.comicsMock.push({
       volumeId: ComicsService.MY_COMICS_ID,
       ...comic
