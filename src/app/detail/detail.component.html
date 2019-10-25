@@ -1,0 +1,17 @@
+<div class="container" *ngIf="comic$ | async as comic">
+  <img [src]="'assets/img/' + comic.imageUrl" />
+  <div>
+    <div class="item">
+      <label>Date</label>
+      <span>{{comic.date | date: 'dd/MM/yyyy'}}</span>
+    </div>
+    <div class="item">
+      <label>Titre</label>
+      <span>{{comic.name}}</span>
+    </div>
+    <div class="item">
+      <label>Description</label>
+      <span>{{comic.description}}</span>
+    </div>
+  </div>
+</div>

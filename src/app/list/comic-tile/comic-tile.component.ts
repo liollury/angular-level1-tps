@@ -13,7 +13,8 @@ export class ComicTileComponent {
   @Output()
   delete: EventEmitter<ComicModel> = new EventEmitter<ComicModel>();
 
-  deleteComic() {
+  deleteComic(event: MouseEvent) {
+    event.stopPropagation();
     this.delete.emit(this.comic);
   }
 }

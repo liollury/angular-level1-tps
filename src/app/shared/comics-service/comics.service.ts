@@ -6,6 +6,7 @@ import { SharedServiceModule } from '../shared-service.module';
 import { ComicModel } from './comic.model';
 import { comicsMock } from './comic.mock';
 import { environment } from '../../../environments/environment';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: SharedServiceModule
@@ -21,7 +22,7 @@ export class ComicsService {
   }
 
   listMocked(): Observable<Array<ComicModel>> {
-    return of(comicsMock);
+    return of(this.comicsMock);
   }
 
   list(volumeId?: number): Observable<Array<ComicModel>> {
@@ -56,6 +57,16 @@ export class ComicsService {
       volumeId: ComicsService.MY_COMICS_ID,
       ...comic
     });
+  }
+
+  getMock(comicId: number): Observable<ComicModel> {
+    return of(this.comicsMock).pipe(
+      map((comics: Array<ComicModel>) => comics.find((comic: ComicModel) => comic.id === comicId))
+    );
+  }
+
+  get(comicId: number): Observable<ComicModel> {
+    return this.http.get<ComicModel>(`${environment.apiUrl}/${ComicsService.RESOURCE}/${comicId}`);
   }
 
 }
