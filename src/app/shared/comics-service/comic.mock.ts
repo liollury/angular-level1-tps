@@ -1,6 +1,6 @@
 import { ComicModel } from './comic.model';
 
-export const comicsMock: Array<ComicModel> = [{
+export let comicsMock: Array<ComicModel> = [{
   date  : '1990-11-14',
   id         : 197814,
   name       : 'L\'Héritier',

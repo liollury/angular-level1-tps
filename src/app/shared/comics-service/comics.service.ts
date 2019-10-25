@@ -10,11 +10,14 @@ import { environment } from '../../../environments/environment';
   providedIn: SharedServiceModule
 })
 export class ComicsService {
+  private comicsMock: Array<ComicModel>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.comicsMock = comicsMock;
+  }
 
   listMocked(): Observable<Array<ComicModel>> {
-    return of(comicsMock);
+    return of(this.comicsMock);
   }
 
   list(volumeId?: number): Observable<Array<ComicModel>> {
@@ -23,5 +26,13 @@ export class ComicsService {
       options.params = {volumeId: volumeId.toString()};
     }
     return this.http.get<Array<ComicModel>>(`${environment.apiUrl}/comics`, options);
+  }
+
+  deleteMock(comicToDelete: ComicModel) {
+    this.comicsMock = this.comicsMock.filter((comic: ComicModel) => comic !== comicToDelete);
+  }
+
+  delete(comic: ComicModel) {
+    return this.http.delete(`${environment.apiUrl}/comics/${comic.id}`);
   }
 }

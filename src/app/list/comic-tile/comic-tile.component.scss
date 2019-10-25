@@ -20,6 +20,13 @@ $screen-recommanded-size: 1400px;
 
   img {
     height: 80%;
+    &.trash {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      height: 30px;
+      cursor: pointer;
+    }
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ComicModel } from '../../shared/comics-service/comic.model';
 
 @Component({
@@ -6,13 +6,14 @@ import { ComicModel } from '../../shared/comics-service/comic.model';
   templateUrl: './comic-tile.component.html',
   styleUrls: ['./comic-tile.component.scss']
 })
-export class ComicTileComponent implements OnInit {
+export class ComicTileComponent {
   @Input()
   comic: ComicModel;
 
-  constructor() { }
+  @Output()
+  delete: EventEmitter<ComicModel> = new EventEmitter<ComicModel>();
 
-  ngOnInit() {
+  deleteComic() {
+    this.delete.emit(this.comic);
   }
-
 }
