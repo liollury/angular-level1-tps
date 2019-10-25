@@ -1,20 +1,14 @@
 form {
   display: flex;
   flex-direction: column;
+
   .block {
     display: flex;
-    .field {
+
+    .form-field {
       flex: 1;
     }
-  }
-  .field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    padding: 5px;
-    label {
-      padding-bottom: 5px;
-    }
+
   }
 
   button {

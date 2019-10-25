@@ -1,8 +1,8 @@
 export class ComicModel {
-  public date: string;
   public id: number;
-  public name: string;
   public volumeId: number;
+  public name: string;
+  public date: string;
   public imageUrl: string;
   public description?: string;
 }
