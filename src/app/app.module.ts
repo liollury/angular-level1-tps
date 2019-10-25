@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { ListModule } from './list/list.module';
 import { DetailModule } from './detail/detail.module';
 import { SuggestModule } from './suggest/suggest.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { SuggestModule } from './suggest/suggest.module';
     ListModule,
     DetailModule,
     SuggestModule,
+    HttpClientModule,
     AppRoute
   ],
   declarations: [
