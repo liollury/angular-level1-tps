@@ -17,7 +17,7 @@ export class CategoryService {
     return of(categoriesMock);
   }
 
-  list(): Observable<Array<CategoryModel>> {
+  list(volumeId?: number): Observable<Array<CategoryModel>> {
     return this.http.get<Array<CategoryModel>>(`${environment.apiUrl}/categories`);
   }
 }
