@@ -17,6 +17,12 @@ $screen-recommended-size: 1400px;
   background-color: #FFFFFF;
   border: solid 2px #000000;
   box-shadow: 0 6px 6px -6px #000000;
+  transition: box-shadow 0.20s, transform 0.10s;
+
+  &:hover {
+    box-shadow: 0 8px 12px -6px #000000;
+    transform: scale(1.05);
+  }
 
   @media screen and (min-width: $screen-recommended-size) {
     width: calc(20% - 16px);
