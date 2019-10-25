@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SharedModule } from '../shared/shared.module';
 import { ListRoute } from './list.routing';
 import { ListComponent } from './list.component';
-import { SharedModule } from '../shared/shared.module';
 import { ComicTileComponent } from './comic-tile/comic-tile.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    ListRoute,
-    SharedModule
+    SharedModule,
+    ListRoute
   ],
-  declarations: [ ListComponent, ComicTileComponent ]
+  declarations: [
+    ListComponent,
+    ComicTileComponent
+  ]
 })
 export class ListModule { }

@@ -1,85 +1,72 @@
-$screen-recommanded-size: 1400px;
+//----------------------------------------
+//  Comic tile
+//----------------------------------------
+
+$screen-recommended-size: 1400px;
+
+//----------------------------------------
 
 :host {
-  @media screen and (min-width: $screen-recommanded-size) {
-    width: calc(20% - 2vmin);
-  }
-  @media screen and (max-width: $screen-recommanded-size) {
-    width: calc(25% - 2vmin);
-  }
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #fff;
-  border: solid 2px #000;
-  box-shadow: 0 6px 6px -6px #000;
-  height: 200px;
-  margin: 1vmin;
-  overflow: hidden;
+  justify-content: center;
   position: relative;
+  overflow: hidden;
+  height: 200px;
+  margin: 8px;
+  background-color: #FFFFFF;
+  border: solid 2px #000000;
+  box-shadow: 0 6px 6px -6px #000000;
+
+  @media screen and (min-width: $screen-recommended-size) {
+    width: calc(20% - 16px);
+  }
+
+  @media screen and (max-width: $screen-recommended-size) {
+    width: calc(25% - 16px);
+  }
 
   img {
     height: 80%;
+
     &.trash {
+      cursor: pointer;
       position: absolute;
       top: 5px;
       right: 5px;
       height: 30px;
-      cursor: pointer;
     }
+
   }
 
-
   .text {
-    background-color: #fff;
-    border: solid 2px #000;
     margin: 0;
-    padding: 3px 10px;
+    padding: 4px 12px;
+    background-color: #FFFFFF;
+    border: solid 2px #000000;
   }
 
   .top-left {
-    left: -6px;
     position: absolute;
     top: -2px;
+    left: -6px;
     transform: skew(-15deg);
   }
 
   .bottom-right {
-    bottom: -2px;
     position: absolute;
     right: -6px;
+    bottom: -2px;
     transform: skew(-15deg);
   }
 
-  &:nth-child(8n+1) {
-    background-image: radial-gradient(circle, yellow, orange);
-  }
+  &:nth-child(8n+1) { background-image: radial-gradient(circle, yellow, orange); }
+  &:nth-child(8n+2) { background-image: radial-gradient(circle, lightblue, deepskyblue); }
+  &:nth-child(8n+3) { background-image: radial-gradient(circle, palegreen, yellowgreen); }
+  &:nth-child(8n+4) { background-image: radial-gradient(circle, lightcoral, tomato); }
+  &:nth-child(8n+5) { background-image: radial-gradient(circle, #F0B2EF, #FF14DC); }
+  &:nth-child(8n+6) { background-image: radial-gradient(circle, #20C7B9, #148C74); }
+  &:nth-child(8n+7) { background-image: radial-gradient(circle, #CFCFCF, #9E9E9E); }
+  &:nth-child(8n+8) { background-image: radial-gradient(circle, #C99D20, #94390C); }
 
-  &:nth-child(8n+2) {
-    background-image: radial-gradient(circle, lightblue, deepskyblue);
-  }
-
-  &:nth-child(8n+3) {
-    background-image: radial-gradient(circle, palegreen, yellowgreen);
-  }
-
-  &:nth-child(8n+4) {
-    background-image: radial-gradient(circle, lightcoral, tomato);
-  }
-
-  &:nth-child(8n+5) {
-    background-image: radial-gradient(circle, #f0b2ef, #ff14dc);
-  }
-
-  &:nth-child(8n+6) {
-    background-image: radial-gradient(circle, #20c7b9, #148c74);
-  }
-
-  &:nth-child(8n+7) {
-    background-image: radial-gradient(circle, #cfcfcf, #9e9e9e);
-  }
-
-  &:nth-child(8n+8) {
-    background-image: radial-gradient(circle, #c99d20, #94390c);
-  }
 }

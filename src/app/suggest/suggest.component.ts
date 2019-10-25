@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { ComicsService } from '../shared/comics-service/comics.service';
+import { ComicsService } from '../shared/comics/comics.service';
 
 @Component({
   selector: 'comics-suggest',
