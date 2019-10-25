@@ -1,0 +1,45 @@
+//----------------------------------------
+//  Form
+//----------------------------------------
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 6px;
+
+  label {
+    margin-bottom: 6px;
+  }
+
+  input,
+  textarea {
+    font-family: Yikies, sans-serif;
+    outline: 0;
+    border: 2px solid #212121;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
+
+  input {
+    height: 36px;
+    padding: 0 8px;
+  }
+
+  textarea {
+    height: 150px;
+    padding: 8px;
+    resize: none;
+  }
+
+  .error {
+    margin-top: 6px;
+    color: #F44336;
+    font-size: .75rem;
+
+    p {
+      margin: 0;
+    }
+
+  }
+
+}
