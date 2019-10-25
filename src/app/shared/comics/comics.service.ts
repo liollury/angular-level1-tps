@@ -24,11 +24,15 @@ export class ComicsService {
     return of(comicsMock);
   }
 
-  list (volumeId?: number): Observable<Array<ComicModel>> {
+  list (volumeId?: number, search?: string): Observable<Array<ComicModel>> {
     let params: HttpParams = new HttpParams();
 
     if (volumeId) {
       params = params.set('volumeId', volumeId.toString());
+    }
+
+    if (search) {
+      params = params.set('q', search);
     }
 
     return this.http.get<Array<ComicModel>>(`${environment.apiUrl}/${ComicsService.RESOURCE}`, {

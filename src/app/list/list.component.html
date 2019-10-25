@@ -1,6 +1,15 @@
+<div class="search-container">
+  <input type="text" placeholder="Rechercher" [formControl]="search" />
+</div>
+
 <ng-container *ngIf="comics$ | async as comics">
   <div class="list-container" *ngIf="comics.length > 0; else noData">
-    <comics-comic-tile *ngFor="let comic of comics" [comic]="comic" (delete)="deleteComic($event)" [routerLink]="['/detail', comic.id]"></comics-comic-tile>
+    <comics-comic-tile
+      *ngFor="let comic of comics"
+      [comic]="comic"
+      [routerLink]="[ '/detail', comic.id ]"
+      (delete)="deleteComic($event)"
+    ></comics-comic-tile>
   </div>
   <ng-template #noData>
     <div class="error">
