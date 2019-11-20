@@ -1,31 +1,34 @@
-<form novalidate>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" #ngForm="ngForm" novalidate>
   <div class="block">
     <div class="form-field">
       <label for="name">Nom</label>
-      <input type="text" id="name" />
+      <input type="text" id="name" formControlName="name" />
 
-      <div class="error">
-        <p>Vous devez remplir un nom</p>
+      <div class="error" *ngIf="name.invalid && (name.dirty || name.touched || ngForm.submitted)">
+        <p *ngIf="name.errors.required">Vous devez remplir un nom</p>
       </div>
     </div>
 
     <div class="form-field">
       <label for="date">Date de sortie</label>
-      <input type="date" id="date" />
+      <input type="date" id="date" formControlName="date" />
 
-      <div class="error">
-        <p>Vous devez remplir une date de sortie</p>
+      <div class="error" *ngIf="date.invalid && (date.dirty || date.touched || ngForm.submitted)">
+        <p *ngIf="date.errors.required">Vous devez remplir une date de sortie</p>
       </div>
     </div>
   </div>
 
   <div class="form-field">
     <label for="description">Description</label>
-    <textarea id="description"></textarea>
+    <textarea
+      id="description"
+      formControlName="description"
+    ></textarea>
 
-    <div class="error">
-      <p>Vous devez remplir une description</p>
-      <p>La description ne doit pas dépasser les 255 caractères</p>
+    <div class="error" *ngIf="description.invalid && (description.dirty || description.touched || ngForm.submitted)">
+      <p *ngIf="description.errors.required">Vous devez remplir une description</p>
+      <p *ngIf="description.errors.maxlength">La description ne doit pas dépasser les 255 caractères</p>
     </div>
   </div>
 

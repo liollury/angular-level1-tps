@@ -10,6 +10,7 @@ import { SharedModule } from '../shared.module';
   providedIn: SharedModule
 })
 export class ComicsService {
+  public static MY_COMICS_ID = 12345;
   private comicsMock: Array<ComicModel> = comicsMock;
 
   list(volumeId?: number, search?: string): Observable<Array<ComicModel>> {
@@ -19,12 +20,16 @@ export class ComicsService {
     );
   }
 
-
   delete(comicToDelete: ComicModel): Observable<any> {
     this.comicsMock = this.comicsMock.filter((comic: ComicModel) => comic !== comicToDelete);
-
     return of(null);
   }
 
+  create(comic: ComicModel): void {
+    this.comicsMock.push({
+      volumeId: ComicsService.MY_COMICS_ID,
+      ...comic
+    });
+  }
 
 }
