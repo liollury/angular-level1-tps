@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CategoryModel } from '../model/category.model';
-import { categoriesMock } from '../categories.data';
+import { CategoryModel } from '../../model/category.model';
+import { categoriesMock } from '../../categories.data';
 
 @Component({
   selector   : 'comics-sidenav',

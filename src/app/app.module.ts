@@ -2,21 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
-import { ComicTileComponent } from './comic-tile/comic-tile.component';
-import { HeaderComponent } from './header/header.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { ListModule } from './list/list.module';
+import { CoreModule } from './core/core.module';
+import { DetailModule } from './detail/detail.module';
+import { SuggestModule } from './suggest/suggest.module';
 
 @NgModule({
   imports     : [
-    BrowserModule
+    BrowserModule,
+    ListModule,
+    CoreModule,
+    DetailModule,
+    SuggestModule
   ],
   declarations: [
-    AppComponent,
-    ListComponent,
-    ComicTileComponent,
-    HeaderComponent,
-    SidenavComponent
+    AppComponent
   ],
   bootstrap   : [AppComponent]
 })

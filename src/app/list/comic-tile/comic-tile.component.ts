@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { ComicModel } from '../model/comic.model';
+import { ComicModel } from '../../model/comic.model';
 
 @Component({
   selector   : 'comics-comic-tile',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserModel } from '../model/user.model';
+import { UserModel } from '../../model/user.model';
 
 @Component({
   selector   : 'comics-header',
