@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderComponent } from './header/header.component';
 import { CoreServiceModule } from './core-service.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { CoreServiceModule } from './core-service.module';
   ],
   imports     : [
     CommonModule,
-    CoreServiceModule
+    CoreServiceModule,
+    RouterModule
   ],
   exports     : [
     SidenavComponent,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { merge, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
@@ -16,16 +17,20 @@ export class ListComponent implements OnInit {
   comics$: Observable<Array<ComicModel>>;
   deleteChanges: Subject<void> = new Subject<void>();
 
-  constructor(private comicsService: ComicsService) {
+  constructor(
+    private comicsService: ComicsService,
+    private activatedRoute: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
     this.comics$ = merge(
       this.searchChanges(),
+      this.activatedRoute.params,
       this.deleteChanges,
       of(null)
     ).pipe(
-      switchMap(() => this.comicsService.list(this.search.value))
+      switchMap(() => this.comicsService.list(this.volumeId, this.search.value))
     );
   }
 
@@ -33,6 +38,10 @@ export class ListComponent implements OnInit {
     this.comicsService.delete(comic).subscribe(() => {
       this.deleteChanges.next();
     });
+  }
+
+  private get volumeId(): number {
+    return parseInt(this.activatedRoute.snapshot.params.category, 10);
   }
 
   private searchChanges(): Observable<string> {

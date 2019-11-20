@@ -12,11 +12,13 @@ import { SharedModule } from '../shared.module';
 export class ComicsService {
   private comicsMock: Array<ComicModel> = comicsMock;
 
-  list(search?: string): Observable<Array<ComicModel>> {
+  list(volumeId?: number, search?: string): Observable<Array<ComicModel>> {
     return of(this.comicsMock).pipe(
+      map((comics: Array<ComicModel>) => comics.filter((comic: ComicModel) => !volumeId || comic.volumeId === volumeId)),
       map((comics: Array<ComicModel>) => comics.filter((comic: ComicModel) => comic.name.toLowerCase().includes(search)))
     );
   }
+
 
   delete(comicToDelete: ComicModel): Observable<any> {
     this.comicsMock = this.comicsMock.filter((comic: ComicModel) => comic !== comicToDelete);

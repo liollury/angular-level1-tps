@@ -1,0 +1,22 @@
+//----------------------------------------
+//  Suggest
+//----------------------------------------
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  .block {
+    display: flex;
+
+    .form-field {
+      flex: 1;
+    }
+
+  }
+
+  button {
+    max-width: 270px;
+    align-self: center;
+  }
+}
