@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserModel } from '../../model/user.model';
+import { UserModel } from '../user/user.model';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector   : 'comics-header',
@@ -10,10 +11,11 @@ import { UserModel } from '../../model/user.model';
 export class HeaderComponent implements OnInit {
   private connectedUser: UserModel;
 
+  constructor(private userService: UserService) {
+  }
+
   ngOnInit() {
-    this.connectedUser = new UserModel();
-    this.connectedUser.firstName = 'Yutaka';
-    this.connectedUser.lastName = 'Kanzaki';
+    this.connectedUser = this.userService.connectedUser;
   }
 
 }

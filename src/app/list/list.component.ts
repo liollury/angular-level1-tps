@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
-import { ComicModel } from '../model/comic.model';
-import { comics } from '../comics.data';
+import { ComicModel } from '../shared/comics/comic.model';
+import { ComicsService } from '../shared/comics/comics.service';
 
 @Component({
   selector   : 'comics-list',
@@ -9,14 +10,19 @@ import { comics } from '../comics.data';
   styleUrls  : ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  search = new FormControl();
   comics: Array<ComicModel>;
 
+  constructor(private comicsService: ComicsService) {
+  }
+
   ngOnInit() {
-    this.comics = comics;
+    this.comics = this.comicsService.list();
   }
 
   onDeleteComic(comic: ComicModel) {
-    this.comics = this.comics.filter((c: ComicModel) => c !== comic);
+    this.comicsService.delete(comic);
+    this.comics = this.comicsService.list();
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CategoryModel } from '../../model/category.model';
-import { categoriesMock } from '../../categories.data';
+import { CategoryModel } from '../category/category.model';
+import { CategoryService } from '../category/category.service';
 
 @Component({
   selector   : 'comics-sidenav',
@@ -11,8 +11,11 @@ import { categoriesMock } from '../../categories.data';
 export class SidenavComponent implements OnInit {
   public categories: Array<CategoryModel>;
 
+  constructor(private categoryService: CategoryService) {
+  }
+
   ngOnInit() {
-    this.categories = categoriesMock;
+    this.categories = this.categoryService.list();
   }
 
 }

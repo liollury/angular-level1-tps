@@ -1,5 +1,7 @@
+import { ComicModel } from './comic.model';
+
 // tslint:disable
-export const comics = [
+export const comicsMock: Array<ComicModel> = [
   {
     date       : '1961-07-31',
     id         : 456485,
