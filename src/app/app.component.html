@@ -1,1 +1,8 @@
-<p>Ta vie ne tient qu’à un fil, Téléféric - Astérix Gladiateur, 1962, planche 2, case 7</p>
+<input type="text" [value]="comic.name" (input)="handleInput($event)"/>
+
+<div class="tile">
+  <img [src]="'assets/img/' + comic.imageUrl"/>
+
+  <p class="text top-left">{{ comic.date }}</p>
+  <p class="text bottom-right">{{ uppercase(comic.name) }}</p>
+</div>
