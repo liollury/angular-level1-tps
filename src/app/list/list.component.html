@@ -1,0 +1,12 @@
+<div class="list-container" *ngIf="comics.length > 0; else noData">
+  <comics-comic-tile
+    *ngFor="let comic of comics"
+    [comic]="comic"
+    (delete)="onDeleteComic($event)"
+  ></comics-comic-tile>
+</div>
+
+<ng-template #noData>
+  <p class="error">Damned, pas de comics en vue !</p>
+</ng-template>
+

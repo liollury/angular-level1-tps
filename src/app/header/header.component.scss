@@ -1,0 +1,48 @@
+//----------------------------------------
+//  Header
+//----------------------------------------
+@import '../../css/abstracts/colors';
+
+$navbar-height: 64px;
+
+//----------------------------------------
+
+:host {
+  width: 100%;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: $navbar-height;
+  padding: 0 16px;
+  color: #FFFFFF;
+  background-color: $color-5;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+
+  h1 {
+    margin: 0;
+    font-family: Bangers, sans-serif;
+
+    a {
+      color: #FFFFFF;
+      text-shadow: 3px 3px 0 #000000;
+    }
+
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: $navbar-height - 8px;
+      margin-right: 12px;
+    }
+
+  }
+
+}

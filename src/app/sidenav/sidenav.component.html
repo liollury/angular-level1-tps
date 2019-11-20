@@ -1,0 +1,9 @@
+<button class="btn">
+  Proposer un comic
+</button>
+
+<div class="categories">
+  <a *ngFor="let category of categories">
+    {{ category.name | titlecase }}
+  </a>
+</div>

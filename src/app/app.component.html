@@ -1,7 +1,9 @@
-<div class="tile" *ngFor="let comic of comics; let odd = odd" [class.odd]="odd">
-    <img *ngIf="comic.imageUrl" [src]="'assets/img/' + comic.imageUrl" />
-    <img *ngIf="!comic.imageUrl" src="assets/img/notfound.png" />
+<comics-header></comics-header>
 
-    <p class="text top-left">{{ comic.date | date: 'dd/MM/yyyy' }}</p>
-    <p class="text bottom-right">{{ comic.name | titlecase }}</p>
+<div class="sidenav-content-container">
+  <comics-sidenav></comics-sidenav>
+
+  <div class="content">
+    <comics-list></comics-list>
+  </div>
 </div>
