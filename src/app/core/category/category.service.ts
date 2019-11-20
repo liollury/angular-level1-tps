@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 import { CoreServiceModule } from '../core-service.module';
 import { CategoryModel } from './category.model';
@@ -9,8 +10,8 @@ import { categoriesMock } from './categories.data';
 })
 export class CategoryService {
 
-  list(): Array<CategoryModel> {
-    return categoriesMock;
+  list(): Observable<Array<CategoryModel>> {
+    return of(categoriesMock);
   }
 
 }

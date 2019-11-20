@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { CategoryModel } from '../category/category.model';
 import { CategoryService } from '../category/category.service';
@@ -9,13 +10,13 @@ import { CategoryService } from '../category/category.service';
   styleUrls  : ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  public categories: Array<CategoryModel>;
+  public categories$: Observable<Array<CategoryModel>>;
 
   constructor(private categoryService: CategoryService) {
   }
 
   ngOnInit() {
-    this.categories = this.categoryService.list();
+    this.categories$ = this.categoryService.list();
   }
 
 }

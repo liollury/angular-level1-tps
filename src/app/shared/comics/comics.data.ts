@@ -74,5 +74,26 @@ export const comicsMock: Array<ComicModel> = [
     name    : 'Le Bouclier arverne',
     volumeId: 74147,
     imageUrl: '4925978-eeee.jpg'
+  },
+  {
+    date    : '1930-05-08',
+    id      : 201735,
+    name    : 'Tintin Au Pays Des Soviets',
+    volumeId: 32164,
+    imageUrl: '1163607-57206.jpg'
+  },
+  {
+    date    : '1931-06-11',
+    id      : 201736,
+    name    : 'Tintin Au Congo',
+    volumeId: 32164,
+    imageUrl: '1163610-57190.jpg'
+  },
+  {
+    date    : '1932-10-20',
+    id      : 201737,
+    name    : 'Tintin En Amerique',
+    volumeId: 32164,
+    imageUrl: '1163612-57209.jpg'
   }
 ];
