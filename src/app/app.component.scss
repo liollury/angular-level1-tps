@@ -1,0 +1,92 @@
+//----------------------------------------
+//  App
+//----------------------------------------
+@import '../css/abstracts/variables';
+
+$screen-recommended-size: 1400px;
+
+//----------------------------------------
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+input {
+  margin-top: 100px;
+  width: 300px;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  margin: 8px;
+  background-color: #FFFFFF;
+  background-image: radial-gradient(circle, lightblue, deepskyblue);
+  border: solid 2px #000000;
+  box-shadow: 0 6px 6px -6px #000000;
+  opacity: 0.9;
+  transition: box-shadow 0.20s, opacity 0.10s;
+
+  &:hover {
+    box-shadow: 0 8px 12px -6px #000000;
+    opacity: 1;
+  }
+
+  @media screen and (min-width: $screen-recommended-size) {
+    width: calc(20% - 16px);
+  }
+
+  @media screen and (max-width: $screen-recommended-size) {
+    width: calc(25% - 16px);
+  }
+
+  img {
+    height: 80%;
+
+    &.trash {
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      height: 30px;
+    }
+
+  }
+
+  .text {
+    margin: 0;
+    padding: 4px 12px;
+    background-color: #FFFFFF;
+    border: solid 2px #000000;
+  }
+
+  .top-left {
+    position: absolute;
+    top: -2px;
+    left: -6px;
+    transform: skew(-15deg);
+  }
+
+  .bottom-right {
+    position: absolute;
+    right: -6px;
+    bottom: -2px;
+    transform: skew(-15deg);
+  }
+
+  &.odd {
+    background-image: radial-gradient(circle, palegreen, yellowgreen);
+  }
+
+}
