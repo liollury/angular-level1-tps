@@ -3,6 +3,6 @@ export class ComicModel {
   public volumeId: number;
   public name: string;
   public date: string;
-  public imageUrl?: string;
+  public imageUrl: string;
   public description?: string;
 }

@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { HeaderComponent } from './header/header.component';
-import { CoreServiceModule } from './core-service.module';
 import { RouterModule } from '@angular/router';
 
+import { CoreServiceModule } from './core-service.module';
+import { HeaderComponent } from './header/header.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+
 @NgModule({
-  declarations: [
-    SidenavComponent,
-    HeaderComponent
-  ],
   imports     : [
     CommonModule,
-    CoreServiceModule,
-    RouterModule
+    RouterModule,
+    CoreServiceModule
+  ],
+  declarations: [
+    HeaderComponent,
+    SidenavComponent
   ],
   exports     : [
-    SidenavComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidenavComponent
   ]
 })
 export class CoreModule {

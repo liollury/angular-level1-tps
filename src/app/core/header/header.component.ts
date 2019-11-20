@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserModel } from '../user/user.model';
 import { UserService } from '../user/user.service';
+import { UserModel } from '../user/user.model';
 
 @Component({
   selector   : 'comics-header',
@@ -9,12 +9,14 @@ import { UserService } from '../user/user.service';
   styleUrls  : ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  private connectedUser: UserModel;
+  connectedUser: UserModel;
 
-  constructor(private userService: UserService) {
+  constructor (
+    private userService: UserService
+  ) {
   }
 
-  ngOnInit() {
+  ngOnInit () {
     this.connectedUser = this.userService.connectedUser;
   }
 

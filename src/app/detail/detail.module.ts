@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
-import { DetailRoute } from './detail.routing';
 import { DetailComponent } from './detail.component';
+import { detailRoute } from './detail.routing';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [DetailComponent],
   imports     : [
     CommonModule,
     SharedModule,
-    DetailRoute
-  ]
+    detailRoute
+  ],
+  declarations: [DetailComponent]
 })
 export class DetailModule {
 }

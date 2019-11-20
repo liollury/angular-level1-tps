@@ -12,10 +12,12 @@ import { CategoryService } from '../category/category.service';
 export class SidenavComponent implements OnInit {
   public categories$: Observable<Array<CategoryModel>>;
 
-  constructor(private categoryService: CategoryService) {
+  constructor (
+    private categoryService: CategoryService
+  ) {
   }
 
-  ngOnInit() {
+  ngOnInit () {
     this.categories$ = this.categoryService.list();
   }
 

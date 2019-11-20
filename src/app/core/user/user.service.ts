@@ -8,10 +8,10 @@ import { UserModel } from './user.model';
 })
 export class UserService {
 
-  get connectedUser(): UserModel {
+  get connectedUser (): UserModel {
     return {
       firstName: 'Astérix',
-      lastName : 'Le Gaulois'
+      lastName: 'Le Gaulois'
     };
   }
 

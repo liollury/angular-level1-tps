@@ -16,6 +16,7 @@ export const comicsMock: Array<ComicModel> = [
     id         : 456486,
     name       : "La Serpe d'or",
     volumeId   : 74147,
+    imageUrl: '',
     description:
       'Asterix and Obelix help the Panoramix the druid get a new sickle.'
   },
@@ -31,7 +32,8 @@ export const comicsMock: Array<ComicModel> = [
     date    : '1964-07-31',
     id      : 458401,
     name    : 'Astérix Gladiateur',
-    volumeId: 74147
+    volumeId: 74147,
+    imageUrl: ''
   },
   {
     date    : '1965-07-31',

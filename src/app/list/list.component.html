@@ -1,5 +1,5 @@
 <div class="search-container">
-  <input type="text" placeholder="Rechercher" [formControl]="search" />
+  <input type="text" placeholder="Rechercher" [formControl]="search"/>
 </div>
 
 <ng-container *ngIf="comics$ | async as comics">
@@ -15,5 +15,4 @@
   <ng-template #noData>
     <p class="error">Damned, pas de comics en vue !</p>
   </ng-template>
-
 </ng-container>

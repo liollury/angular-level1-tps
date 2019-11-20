@@ -11,7 +11,7 @@ const listRoutes: Routes = [
   {
     path     : ':category',
     component: ListComponent
-  },
+  }
 ];
 
 export const ListRoute: ModuleWithProviders = RouterModule.forChild(listRoutes);

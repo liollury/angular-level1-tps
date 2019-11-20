@@ -1,32 +1,48 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { ComicModel } from './comic.model';
-import { comicsMock } from './comics.data';
-import { SharedModule } from '../shared.module';
+import { environment } from '../../../environments/environment';
+import { SharedServiceModule } from '../shared-service.module';
 
 @Injectable({
-  providedIn: SharedModule
+  providedIn: SharedServiceModule
 })
 export class ComicsService {
   public static MY_COMICS_ID = 12345;
-  private comicsMock: Array<ComicModel> = comicsMock;
+  private static RESOURCE = 'comics';
 
-  list(volumeId?: number, search?: string): Observable<Array<ComicModel>> {
-    return of(this.comicsMock).pipe(
-      map((comics: Array<ComicModel>) => comics.filter((comic: ComicModel) => !volumeId || comic.volumeId === volumeId)),
-      map((comics: Array<ComicModel>) => comics.filter((comic: ComicModel) => comic.name.toLowerCase().includes(search)))
-    );
+  constructor (
+    private http: HttpClient
+  ) { }
+
+  list (volumeId?: number, search?: string): Observable<Array<ComicModel>> {
+    let params: HttpParams = new HttpParams();
+
+    if (volumeId) {
+      params = params.set('volumeId', volumeId.toString());
+    }
+
+    if (search) {
+      params = params.set('q', search);
+    }
+
+    return this.http.get<Array<ComicModel>>(`${environment.apiUrl}/${ComicsService.RESOURCE}`, {
+      params
+    });
   }
 
-  delete(comicToDelete: ComicModel): Observable<any> {
-    this.comicsMock = this.comicsMock.filter((comic: ComicModel) => comic !== comicToDelete);
-    return of(null);
+  get (comicId: number): Observable<ComicModel> {
+    return this.http.get<ComicModel>(`${environment.apiUrl}/${ComicsService.RESOURCE}/${comicId}`);
   }
 
-  create(comic: ComicModel): void {
-    this.comicsMock.push({
+  delete (comic: ComicModel): Observable<void> {
+    return this.http.delete<void>(`${environment.apiUrl}/comics/${comic.id}`);
+  }
+
+  create (comic: ComicModel): Observable<void> {
+    return this.http.post<void>(`${environment.apiUrl}/${ComicsService.RESOURCE}`, {
       volumeId: ComicsService.MY_COMICS_ID,
       ...comic
     });

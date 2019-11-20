@@ -7,11 +7,7 @@ const suggestRoutes: Routes = [
   {
     path     : '',
     component: SuggestComponent
-  },
-  /*{
-    path: 'suggest',
-    component: SuggestComponent
-  }*/
+  }
 ];
 
 export const SuggestRoute: ModuleWithProviders = RouterModule.forChild(suggestRoutes);

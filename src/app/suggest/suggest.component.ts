@@ -12,14 +12,14 @@ import { ComicsService } from '../shared/comics/comics.service';
 export class SuggestComponent implements OnInit {
   form: FormGroup;
 
-  constructor(
+  constructor (
     private comicsService: ComicsService,
     private router: Router,
     private fb: FormBuilder
   ) {
   }
 
-  ngOnInit() {
+  ngOnInit () {
     this.form = this.fb.group({
       name       : this.fb.control(null, {
         validators: [Validators.required]
@@ -33,25 +33,16 @@ export class SuggestComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit () {
     if (this.form.valid) {
-      const comic = this.form.value;
-      comic.volumeId = 12345;
-      this.comicsService.create(comic);
-      this.router.navigate(['/comics', ComicsService.MY_COMICS_ID]);
+      this.comicsService.create(this.form.value).subscribe(() => {
+        this.router.navigate(['/comics', ComicsService.MY_COMICS_ID]);
+      });
     }
   }
 
-  get name() {
-    return this.form.controls.name;
-  }
-
-  get date() {
-    return this.form.controls.date;
-  }
-
-  get description() {
-    return this.form.controls.description;
-  }
+  get name () { return this.form.controls.name; }
+  get date () { return this.form.controls.date; }
+  get description () { return this.form.controls.description; }
 
 }

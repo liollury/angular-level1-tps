@@ -7,11 +7,7 @@ const detailRoutes: Routes = [
     path     : ':id',
     component: DetailComponent
   },
-  /*{
-    path: 'detail/:id',
-    component: DetailComponent
-  },*/
 ];
 
-export const DetailRoute: ModuleWithProviders = RouterModule.forChild(detailRoutes);
+export const detailRoute: ModuleWithProviders = RouterModule.forChild(detailRoutes);
 

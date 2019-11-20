@@ -1,16 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoute } from './app.routing';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AppRoute } from './app.routing';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports     : [
     BrowserModule,
-    ReactiveFormsModule,
     CoreModule,
+    HttpClientModule,
     AppRoute
   ],
   declarations: [
