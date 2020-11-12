@@ -5,13 +5,9 @@ import { SuggestComponent } from './suggest.component';
 
 const suggestRoutes: Routes = [
   {
-    path: '',
+    path     : '',
     component: SuggestComponent
-  },
-  /*{
-    path: 'suggest',
-    component: SuggestComponent
-  }*/
+  }
 ];
 
-export const SuggestRoute: ModuleWithProviders = RouterModule.forChild(suggestRoutes);
+export const SuggestRoute: ModuleWithProviders<RouterModule> = RouterModule.forChild(suggestRoutes);

@@ -67,13 +67,36 @@ $screen-recommended-size: 1400px;
     transform: skew(-15deg);
   }
 
-  &:nth-child(8n+1) { background-image: radial-gradient(circle, yellow, orange); }
-  &:nth-child(8n+2) { background-image: radial-gradient(circle, lightblue, deepskyblue); }
-  &:nth-child(8n+3) { background-image: radial-gradient(circle, palegreen, yellowgreen); }
-  &:nth-child(8n+4) { background-image: radial-gradient(circle, lightcoral, tomato); }
-  &:nth-child(8n+5) { background-image: radial-gradient(circle, #F0B2EF, #FF14DC); }
-  &:nth-child(8n+6) { background-image: radial-gradient(circle, #20C7B9, #148C74); }
-  &:nth-child(8n+7) { background-image: radial-gradient(circle, #CFCFCF, #9E9E9E); }
-  &:nth-child(8n+8) { background-image: radial-gradient(circle, #C99D20, #94390C); }
+  &:nth-child(8n+1) {
+    background-image: radial-gradient(circle, yellow, orange);
+  }
+
+  &:nth-child(8n+2) {
+    background-image: radial-gradient(circle, lightblue, deepskyblue);
+  }
+
+  &:nth-child(8n+3) {
+    background-image: radial-gradient(circle, palegreen, yellowgreen);
+  }
+
+  &:nth-child(8n+4) {
+    background-image: radial-gradient(circle, lightcoral, tomato);
+  }
+
+  &:nth-child(8n+5) {
+    background-image: radial-gradient(circle, #F0B2EF, #FF14DC);
+  }
+
+  &:nth-child(8n+6) {
+    background-image: radial-gradient(circle, #20C7B9, #148C74);
+  }
+
+  &:nth-child(8n+7) {
+    background-image: radial-gradient(circle, #CFCFCF, #9E9E9E);
+  }
+
+  &:nth-child(8n+8) {
+    background-image: radial-gradient(circle, #C99D20, #94390C);
+  }
 
 }

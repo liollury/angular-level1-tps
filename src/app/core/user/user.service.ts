@@ -12,7 +12,7 @@ export class UserService {
     return {
       firstName: 'Astérix',
       lastName: 'Le Gaulois'
-    }
+    };
   }
 
 }

@@ -8,7 +8,7 @@ import { ListComponent } from './list.component';
 import { ComicTileComponent } from './comic-tile/comic-tile.component';
 
 @NgModule({
-  imports: [
+  imports     : [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
@@ -19,4 +19,5 @@ import { ComicTileComponent } from './comic-tile/comic-tile.component';
     ComicTileComponent
   ]
 })
-export class ListModule { }
+export class ListModule {
+}

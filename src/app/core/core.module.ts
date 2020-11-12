@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
-  imports: [
+  imports     : [
     CommonModule,
     RouterModule,
     CoreServiceModule
@@ -16,9 +16,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     HeaderComponent,
     SidenavComponent
   ],
-  exports: [
+  exports     : [
     HeaderComponent,
     SidenavComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+}

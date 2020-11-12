@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
-import { merge, Observable, Subject } from 'rxjs';
+import { merge, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 import { ComicModel } from '../shared/comics/comic.model';
 import { ComicsService } from '../shared/comics/comics.service';
 
 @Component({
-  selector: 'comics-list',
+  selector   : 'comics-list',
   templateUrl: './list.component.html',
-  styleUrls: [ './list.component.scss' ]
+  styleUrls  : ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
   search = new FormControl();
@@ -20,13 +20,15 @@ export class ListComponent implements OnInit {
   constructor (
     private comicsService: ComicsService,
     private activatedRoute: ActivatedRoute
-  ) { }
+  ) {
+  }
 
   ngOnInit () {
     this.comics$ = merge(
       this.searchChanges(),
       this.activatedRoute.params,
-      this.deleteChanges
+      this.deleteChanges,
+      of(null)
     ).pipe(
       switchMap(() => this.comicsService.list(this.volumeId, this.search.value))
     );

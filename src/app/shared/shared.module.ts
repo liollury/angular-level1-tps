@@ -11,4 +11,5 @@ import { SharedServiceModule } from './shared-service.module';
     SharedServiceModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

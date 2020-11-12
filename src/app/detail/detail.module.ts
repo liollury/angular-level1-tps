@@ -5,11 +5,12 @@ import { detailRoute } from './detail.routing';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [
+  imports     : [
     CommonModule,
     SharedModule,
     detailRoute
   ],
   declarations: [DetailComponent]
 })
-export class DetailModule { }
+export class DetailModule {
+}

@@ -5,9 +5,9 @@ import { Router } from '@angular/router';
 import { ComicsService } from '../shared/comics/comics.service';
 
 @Component({
-  selector: 'comics-suggest',
+  selector   : 'comics-suggest',
   templateUrl: './suggest.component.html',
-  styleUrls: ['./suggest.component.scss']
+  styleUrls  : ['./suggest.component.scss']
 })
 export class SuggestComponent implements OnInit {
   form: FormGroup;
@@ -16,26 +16,27 @@ export class SuggestComponent implements OnInit {
     private comicsService: ComicsService,
     private router: Router,
     private fb: FormBuilder
-  ) { }
+  ) {
+  }
 
   ngOnInit () {
     this.form = this.fb.group({
-      name: this.fb.control(null, {
-        validators: [ Validators.required ]
+      name       : this.fb.control(null, {
+        validators: [Validators.required]
       }),
-      date: this.fb.control(null, {
-        validators: [ Validators.required ]
+      date       : this.fb.control(null, {
+        validators: [Validators.required]
       }),
       description: this.fb.control(null, {
-        validators: [ Validators.required, Validators.maxLength(255) ]
+        validators: [Validators.required, Validators.maxLength(255)]
       })
-    })
+    });
   }
 
   onSubmit () {
     if (this.form.valid) {
       this.comicsService.create(this.form.value).subscribe(() => {
-        this.router.navigate([ '/comics', ComicsService.MY_COMICS_ID ]);
+        this.router.navigate(['/comics', ComicsService.MY_COMICS_ID]);
       });
     }
   }

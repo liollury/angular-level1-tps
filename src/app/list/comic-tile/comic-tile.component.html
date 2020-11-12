@@ -1,7 +1,15 @@
-<img *ngIf="comic.imageUrl" [src]="'assets/img/' + comic.imageUrl" />
-<img *ngIf="!comic.imageUrl" src="assets/img/notfound.png" />
+<img
+    *ngIf="comic.imageUrl"
+    [src]="'assets/img/' + comic.imageUrl"
+    data-testid="image-found"
+/>
+<img
+    *ngIf="!comic.imageUrl"
+    src="assets/img/notfound.png"
+    data-testid="image-not-found"
+/>
 
-<p class="text top-left">{{ comic.date | date:'dd/MM/yyyy' }}</p>
+<p class="text top-left">{{ comic.date | date: 'dd/MM/yyyy' }}</p>
 <p class="text bottom-right">{{ comic.name | titlecase }}</p>
 
 <img class="trash" src="assets/img/trash.png" (click)="onDelete($event)" />

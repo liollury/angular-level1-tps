@@ -2,7 +2,7 @@
   <div class="block">
     <div class="form-field">
       <label for="name">Nom</label>
-      <input type="text" id="name" formControlName="name" />
+      <input type="text" id="name" formControlName="name"/>
 
       <div class="error" *ngIf="name.invalid && (name.dirty || name.touched || ngForm.submitted)">
         <p *ngIf="name.errors.required">Vous devez remplir un nom</p>
@@ -11,7 +11,7 @@
 
     <div class="form-field">
       <label for="date">Date de sortie</label>
-      <input type="date" id="date" formControlName="date" />
+      <input type="date" id="date" formControlName="date"/>
 
       <div class="error" *ngIf="date.invalid && (date.dirty || date.touched || ngForm.submitted)">
         <p *ngIf="date.errors.required">Vous devez remplir une date de sortie</p>

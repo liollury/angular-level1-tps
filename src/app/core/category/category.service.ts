@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 
 import { CoreServiceModule } from '../core-service.module';
 import { CategoryModel } from './category.model';
-import { categoriesMock } from './category.mock';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -15,10 +14,7 @@ export class CategoryService {
 
   constructor (
     private http: HttpClient
-  ) { }
-
-  listMocked (): Observable<Array<CategoryModel>> {
-    return of(categoriesMock);
+  ) {
   }
 
   list (): Observable<Array<CategoryModel>> {

@@ -7,12 +7,13 @@ import { SuggestComponent } from './suggest.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [
+  imports     : [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
     SuggestRoute
   ],
-  declarations: [ SuggestComponent ]
+  declarations: [SuggestComponent]
 })
-export class SuggestModule { }
+export class SuggestModule {
+}

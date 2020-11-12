@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'comics-root',
+  selector   : 'comics-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls  : ['./app.component.scss']
 })
-export class AppComponent { }
+export class AppComponent {
+}
