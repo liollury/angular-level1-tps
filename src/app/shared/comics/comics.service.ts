@@ -38,7 +38,7 @@ export class ComicsService {
   }
 
   delete (comic: ComicModel): Observable<void> {
-    return this.http.delete<void>(`${environment.apiUrl}/comics/${comic.id}`);
+    return this.http.delete<void>(`${environment.apiUrl}/${ComicsService.RESOURCE}/${comic.id}`);
   }
 
   create (comic: ComicModel): Observable<void> {
