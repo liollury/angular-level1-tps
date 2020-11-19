@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8585'
+  apiUrl: 'https://my-json-server.typicode.com/groupe-sii/angular-training-comics-api'
 };
 
 /*
