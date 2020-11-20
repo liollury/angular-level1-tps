@@ -14,4 +14,4 @@ const suggestRoutes: Routes = [
   }*/
 ];
 
-export const SuggestRoute: ModuleWithProviders = RouterModule.forChild(suggestRoutes);
+export const SuggestRoute: ModuleWithProviders<RouterModule> = RouterModule.forChild(suggestRoutes);

@@ -13,5 +13,5 @@ const detailRoutes: Routes = [
   },*/
 ];
 
-export const DetailRoute: ModuleWithProviders = RouterModule.forChild(detailRoutes);
+export const DetailRoute: ModuleWithProviders<RouterModule> = RouterModule.forChild(detailRoutes);
 
