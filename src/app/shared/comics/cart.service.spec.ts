@@ -1,16 +1,23 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { CartService } from './cart.service';
-import { SharedServiceModule } from '../shared-service.module';
 
 describe('CartService', () => {
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            imports: [SharedServiceModule]
-        });
-    }));
-    it('should give 2 comics', () => {
-        const cartService: CartService = TestBed.get(CartService);
+  let service: CartService;
 
-        expect(cartService.comics.length).toEqual(2);
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      providers: [ CartService ]
     });
+    service = TestBed.inject(CartService);
+  }));
+
+  describe('#getComics', () => {
+
+    it(`should retrieve a list of 2 comics`, () => {
+      expect(service.getComics().length).toEqual(2);
+    });
+
+  });
+
+
 });

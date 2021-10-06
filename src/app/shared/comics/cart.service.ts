@@ -13,8 +13,7 @@ export class CartService {
       name: "L'Héritier",
       volumeId: 31638,
       imageUrl: '1812641-couv_212.jpg',
-      description:
-        'After the death of Nerio Winch are trying to kill them. Will Largo escape them...?'
+      description: 'After the death of Nerio Winch are trying to kill them. Will Largo escape them...?'
     },
     {
       date: '1991-09-11',
@@ -22,8 +21,7 @@ export class CartService {
       name: 'Le Groupe W',
       volumeId: 31638,
       imageUrl: '1812656-couv_213.jpg',
-      description:
-        'Largo Winczlav narrowly escapes. Will largo find out who he is before he strikes again and takes over the empire?'
+      description: 'Largo Winczlav narrowly escapes. Will largo find out who he is before he strikes again and takes over the empire?'
     }
   ];
 

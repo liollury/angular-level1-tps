@@ -1,57 +1,55 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { ComicTileComponent } from './comic-tile.component';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ComicModel } from '../../shared/comics/comic.model';
+import { ComicTileComponent } from './comic-tile.component';
 
 describe('ComicTileComponent', () => {
-    let component: ComicTileComponent;
-    let fixture: ComponentFixture<ComicTileComponent>;
+  let component: ComicTileComponent;
+  let fixture: ComponentFixture<ComicTileComponent>;
 
-    beforeEach(async(() => {
-        TestBed.configureTestingModule({
-            declarations: [ComicTileComponent]
-        }).compileComponents();
-    }));
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ ComicTileComponent ]
+    }).compileComponents();
+  }));
 
-    beforeEach(() => {
-        fixture = TestBed.createComponent(ComicTileComponent);
-        component = fixture.componentInstance;
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ComicTileComponent);
+    component = fixture.componentInstance;
+  });
+
+  it(`should show the image if their is one`, () => {
+    component.comic = { imageUrl: 'img.jpg' } as ComicModel;
+    fixture.detectChanges();
+
+    const imageFound = fixture.debugElement.query(By.css(`[data-testid="image-found"]`));
+    const imageNotFound = fixture.debugElement.query(By.css(`[data-testid="image-not-found"]`));
+
+    expect(imageFound).toBeTruthy();
+    expect(imageNotFound).toBeFalsy();
+  });
+
+  it(`should show a "not found" image if the "imageUrl" is empty`, () => {
+    component.comic = { imageUrl: null } as ComicModel;
+    fixture.detectChanges();
+
+    const imageFound = fixture.debugElement.query(By.css(`[data-testid="image-found"]`));
+    const imageNotFound = fixture.debugElement.query(By.css(`[data-testid="image-not-found"]`));
+
+    expect(imageNotFound).toBeTruthy();
+    expect(imageFound).toBeFalsy();
+  });
+
+  describe('#onDelete', () => {
+
+    it(`should stop the event propagation to avoid the delete click from triggering the parent's "routerLink" event`, () => {
+      const event = new MouseEvent('mouse');
+      spyOn(event, 'stopPropagation');
+
+      component.onDelete(event);
+      expect(event.stopPropagation).toHaveBeenCalled();
     });
 
-    it('should create the component with a comic', () => {
-        component.comic = {
-            date: '1990-11-14',
-            id: 197814,
-            name: `L'Héritier`,
-            volumeId: 31638,
-            imageUrl: '1812641-couv_212.jpg',
-            description:
-                'After the death of Nerio Winch are trying to kill them. Will Largo escape them...?'
-        };
-        fixture.detectChanges();
+  });
 
-        const domElement = fixture.debugElement.query(
-            By.css(`[data-testid="image-found"]`)
-        ).nativeElement;
-
-        expect(domElement.src).toContain('1812641-couv_212.jpg');
-    });
-
-    it('should create the component with a comic light', () => {
-        component.comic = {
-            date: '1990-11-14',
-            id: 197814,
-            name: `L'Héritier`,
-            volumeId: 31638,
-            imageUrl: '',
-            description:
-                'After the death of Nerio Winch are trying to kill them. Will Largo escape them...?'
-        };
-        fixture.detectChanges();
-
-        const domElement = fixture.debugElement.query(
-            By.css(`[data-testid="image-not-found"]`)
-        ).nativeElement;
-
-        expect(domElement.src).toContain('notfound.png');
-    });
 });
