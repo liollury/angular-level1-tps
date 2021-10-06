@@ -1,13 +1,11 @@
 <img
-    *ngIf="comic.imageUrl"
-    [src]="'assets/img/' + comic.imageUrl"
-    data-testid="image-found"
-/>
+  *ngIf="comic.imageUrl"
+  [src]="'assets/img/' + comic.imageUrl"
+  data-testid="image-found" />
 <img
-    *ngIf="!comic.imageUrl"
-    src="assets/img/notfound.png"
-    data-testid="image-not-found"
-/>
+  *ngIf="!comic.imageUrl"
+  src="assets/img/notfound.png"
+  data-testid="image-not-found" />
 
 <p class="text top-left">{{ comic.date | date: 'dd/MM/yyyy' }}</p>
 <p class="text bottom-right">{{ comic.name | titlecase }}</p>

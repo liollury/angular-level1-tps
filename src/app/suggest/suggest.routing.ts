@@ -1,11 +1,10 @@
-import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-
+import { RouterModule, Routes } from '@angular/router';
 import { SuggestComponent } from './suggest.component';
 
 const suggestRoutes: Routes = [
   {
-    path     : '',
+    path: '',
     component: SuggestComponent
   }
 ];

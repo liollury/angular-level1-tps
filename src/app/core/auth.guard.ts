@@ -10,7 +10,7 @@ import { CoreServiceModule } from './core-service.module';
 export class AuthGuard implements CanActivate {
   private isAuthorized = true;
 
-  canActivate (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (!this.isAuthorized) {
       alert('Javascript 2001');
     }
