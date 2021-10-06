@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { SuggestRoute } from './suggest.routing';
 import { SuggestComponent } from './suggest.component';
+import { SuggestRoute } from './suggest.routing';
 
 @NgModule({
-  declarations: [SuggestComponent],
-  imports     : [
+  imports: [
     CommonModule,
     SharedModule,
     SuggestRoute
-  ]
+  ],
+  declarations: [ SuggestComponent ]
 })
-export class SuggestModule {
-}
+export class SuggestModule { }
