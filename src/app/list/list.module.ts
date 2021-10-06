@@ -1,23 +1,22 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent } from './list.component';
-import { ComicTileComponent } from './comic-tile/comic-tile.component';
-import { SharedModule } from '../shared/shared.module';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { ComicTileComponent } from './comic-tile/comic-tile.component';
+import { ListComponent } from './list.component';
 
 @NgModule({
-  declarations: [
-    ListComponent,
-    ComicTileComponent
-  ],
-  imports     : [
+  imports: [
     CommonModule,
     ReactiveFormsModule,
     SharedModule
   ],
-  exports     : [
+  declarations: [
+    ListComponent,
+    ComicTileComponent
+  ],
+  exports: [
     ListComponent
   ]
 })
-export class ListModule {
-}
+export class ListModule { }
