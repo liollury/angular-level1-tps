@@ -7,7 +7,7 @@ import { UserModel } from '../model/user.model';
   styleUrls: [ './header.component.scss' ]
 })
 export class HeaderComponent implements OnInit {
-  private connectedUser: UserModel;
+  public connectedUser: UserModel;
 
   ngOnInit() {
     this.connectedUser = new UserModel();
