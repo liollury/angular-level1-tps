@@ -1,7 +1,7 @@
 <div class="tile" *ngFor="let comic of comics; let odd = odd" [class.odd]="odd">
-    <img *ngIf="comic.imageUrl" [src]="'assets/img/' + comic.imageUrl" />
-    <img *ngIf="!comic.imageUrl" src="assets/img/notfound.png" />
+  <img *ngIf="comic.imageUrl" [src]="'assets/img/' + comic.imageUrl" />
+  <img *ngIf="!comic.imageUrl" src="assets/img/notfound.png" />
 
-    <p class="text top-left">{{ comic.date | date: 'dd/MM/yyyy' }}</p>
-    <p class="text bottom-right">{{ comic.name | titlecase }}</p>
+  <p class="text top-left">{{ comic.date | date: 'dd/MM/yyyy' }}</p>
+  <p class="text bottom-right">{{ comic.name | titlecase }}</p>
 </div>
