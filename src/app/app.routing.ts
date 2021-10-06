@@ -1,25 +1,25 @@
-import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/auth.guard';
 
 const appRoutes: Routes = [
   {
-    path        : 'detail',
+    path: 'detail',
     loadChildren: () => import('./detail/detail.module').then((m) => m.DetailModule)
   },
   {
-    path        : 'comics',
+    path: 'comics',
     loadChildren: () => import('./list/list.module').then((m) => m.ListModule)
   },
   {
-    path        : 'suggest',
+    path: 'suggest',
     loadChildren: () => import('./suggest/suggest.module').then((m) => m.SuggestModule),
-    canActivate : [AuthGuard]
+    canActivate: [ AuthGuard ]
   },
   {
-    path      : '**',
+    path: '**',
     redirectTo: '/comics'
-  },
+  }
 ];
 
-export const AppRoute: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const AppRoute: ModuleWithProviders<RouterModule> = RouterModule.forRoot(appRoutes);

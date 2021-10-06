@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { SharedServiceModule } from './shared-service.module';
 
 @NgModule({
@@ -11,5 +11,4 @@ import { SharedServiceModule } from './shared-service.module';
     SharedServiceModule
   ]
 })
-export class SharedModule {
-}
+export class SharedModule { }
