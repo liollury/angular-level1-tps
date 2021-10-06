@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
 import { ComicModel } from '../../shared/comics/comic.model';
 
 @Component({
-  selector   : 'comics-comic-tile',
+  selector: 'comics-comic-tile',
   templateUrl: './comic-tile.component.html',
-  styleUrls  : ['./comic-tile.component.scss']
+  styleUrls: [ './comic-tile.component.scss' ]
 })
 export class ComicTileComponent {
 

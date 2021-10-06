@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import { CoreServiceModule } from '../core-service.module';
 import { CategoryModel } from './category.model';
-import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: CoreServiceModule
@@ -12,12 +11,11 @@ import { environment } from '../../../environments/environment';
 export class CategoryService {
   private static RESOURCE = 'categories';
 
-  constructor (
+  constructor(
     private http: HttpClient
-  ) {
-  }
+  ) { }
 
-  list (): Observable<Array<CategoryModel>> {
+  list(): Observable<Array<CategoryModel>> {
     return this.http.get<Array<CategoryModel>>(`${environment.apiUrl}/${CategoryService.RESOURCE}`);
   }
 

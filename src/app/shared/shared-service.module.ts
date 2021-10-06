@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
 
 @NgModule()
-export class SharedServiceModule {
-}
+export class SharedServiceModule { }

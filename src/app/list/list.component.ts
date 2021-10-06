@@ -3,25 +3,23 @@ import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { merge, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-
 import { ComicModel } from '../shared/comics/comic.model';
 import { ComicsService } from '../shared/comics/comics.service';
 
 @Component({
-  selector   : 'comics-list',
+  selector: 'comics-list',
   templateUrl: './list.component.html',
-  styleUrls  : ['./list.component.scss']
+  styleUrls: [ './list.component.scss' ]
 })
 export class ListComponent implements OnInit {
-  search = new FormControl();
-  comics$: Observable<Array<ComicModel>>;
-  deleteChanges: Subject<void> = new Subject<void>();
+  public search = new FormControl('');
+  public comics$: Observable<Array<ComicModel>>;
+  public deleteChanges: Subject<void> = new Subject<void>();
 
   constructor (
     private comicsService: ComicsService,
     private activatedRoute: ActivatedRoute
-  ) {
-  }
+  ) { }
 
   ngOnInit () {
     this.comics$ = merge(
