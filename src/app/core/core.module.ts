@@ -1,21 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
-  imports     : [
+  imports: [
     CommonModule
   ],
   declarations: [
     SidenavComponent,
     HeaderComponent
   ],
-  exports     : [
+  exports: [
     SidenavComponent,
     HeaderComponent
   ]
 })
-export class CoreModule {
-}
+export class CoreModule { }

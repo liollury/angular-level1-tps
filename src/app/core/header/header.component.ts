@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
 import { UserModel } from '../../model/user.model';
 
 @Component({
-  selector   : 'comics-header',
+  selector: 'comics-header',
   templateUrl: './header.component.html',
-  styleUrls  : ['./header.component.scss']
+  styleUrls: [ './header.component.scss' ]
 })
 export class HeaderComponent implements OnInit {
-  private connectedUser: UserModel;
+  public connectedUser: UserModel;
 
   ngOnInit() {
     this.connectedUser = new UserModel();
