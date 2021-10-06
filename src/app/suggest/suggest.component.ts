@@ -1,34 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 import { ComicsService } from '../shared/comics/comics.service';
 
 @Component({
-  selector   : 'comics-suggest',
+  selector: 'comics-suggest',
   templateUrl: './suggest.component.html',
-  styleUrls  : ['./suggest.component.scss']
+  styleUrls: [ './suggest.component.scss' ]
 })
 export class SuggestComponent implements OnInit {
-  form: FormGroup;
+  public form: FormGroup;
 
   constructor(
     private comicsService: ComicsService,
     private router: Router,
     private fb: FormBuilder
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.form = this.fb.group({
-      name       : this.fb.control(null, {
-        validators: [Validators.required]
+      name: this.fb.control(null, {
+        validators: [ Validators.required ]
       }),
-      date       : this.fb.control(null, {
-        validators: [Validators.required]
+      date: this.fb.control(null, {
+        validators: [ Validators.required ]
       }),
       description: this.fb.control(null, {
-        validators: [Validators.required, Validators.maxLength(255)]
+        validators: [ Validators.required, Validators.maxLength(255) ]
       })
     });
   }
@@ -38,20 +36,14 @@ export class SuggestComponent implements OnInit {
       const comic = this.form.value;
       comic.volumeId = 12345;
       this.comicsService.create(comic);
-      this.router.navigate(['/comics', ComicsService.MY_COMICS_ID]);
+      this.router.navigate([ '/comics', ComicsService.MY_COMICS_ID ]);
     }
   }
 
-  get name() {
-    return this.form.controls.name;
-  }
+  get name() { return this.form.controls.name; }
 
-  get date() {
-    return this.form.controls.date;
-  }
+  get date() { return this.form.controls.date; }
 
-  get description() {
-    return this.form.controls.description;
-  }
+  get description() { return this.form.controls.description; }
 
 }

@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { SharedModule } from '../shared.module';
 import { ComicModel } from './comic.model';
 import { comicsMock } from './comics.data';
-import { SharedModule } from '../shared.module';
 
 @Injectable({
   providedIn: SharedModule

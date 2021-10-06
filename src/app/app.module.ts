@@ -1,13 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { AppRoute } from './app.routing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { AppRoute } from './app.routing';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  imports     : [
+  imports: [
     BrowserModule,
     ReactiveFormsModule,
     CoreModule,
@@ -16,7 +15,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent
   ],
-  bootstrap   : [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule {
-}
+export class AppModule { }
