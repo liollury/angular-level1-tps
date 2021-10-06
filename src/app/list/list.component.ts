@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-
 import { ComicModel } from '../shared/comics/comic.model';
 import { ComicsService } from '../shared/comics/comics.service';
 
 @Component({
-  selector   : 'comics-list',
+  selector: 'comics-list',
   templateUrl: './list.component.html',
-  styleUrls  : ['./list.component.scss']
+  styleUrls: [ './list.component.scss' ]
 })
 export class ListComponent implements OnInit {
-  search = new FormControl();
-  comics: Array<ComicModel>;
+  public search = new FormControl();
+  public comics: Array<ComicModel>;
 
-  constructor(private comicsService: ComicsService) {
-  }
+  constructor(
+    private comicsService: ComicsService
+  ) { }
 
   ngOnInit() {
     this.comics = this.comicsService.list();

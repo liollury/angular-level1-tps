@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-
+import { SharedModule } from '../shared.module';
 import { ComicModel } from './comic.model';
 import { comicsMock } from './comics.data';
-import { SharedModule } from '../shared.module';
 
 @Injectable({
   providedIn: SharedModule
