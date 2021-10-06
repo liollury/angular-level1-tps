@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ComicModel } from '../model/comic.model';
 import { comics } from '../comics.data';
+import { ComicModel } from '../model/comic.model';
 
 @Component({
-  selector   : 'comics-list',
+  selector: 'comics-list',
   templateUrl: './list.component.html',
-  styleUrls  : ['./list.component.scss']
+  styleUrls: [ './list.component.scss' ]
 })
 export class ListComponent implements OnInit {
   comics: Array<ComicModel>;

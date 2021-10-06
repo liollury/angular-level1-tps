@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
-import { CategoryModel } from '../model/category.model';
 import { categoriesMock } from '../categories.data';
+import { CategoryModel } from '../model/category.model';
 
 @Component({
-  selector   : 'comics-sidenav',
+  selector: 'comics-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls  : ['./sidenav.component.scss']
+  styleUrls: [ './sidenav.component.scss' ]
 })
 export class SidenavComponent implements OnInit {
   public categories: Array<CategoryModel>;
