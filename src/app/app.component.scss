@@ -11,7 +11,6 @@ $screen-recommended-size: 1400px;
 :host {
   display: flex;
   flex-direction: column;
-  align-items: center;
   top: 0;
   right: 0;
   bottom: 0;
@@ -88,6 +87,23 @@ input {
 
   &.odd {
     background-image: radial-gradient(circle, palegreen, yellowgreen);
+  }
+
+}
+
+.sidenav-content-container {
+  flex: 1;
+  display: flex;
+  height: 100%;
+
+  comics-sidenav {
+    width: 300px;
+  }
+
+  .content {
+    flex: 1;
+    overflow: auto;
+    padding: 24px;
   }
 
 }
